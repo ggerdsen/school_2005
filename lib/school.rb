@@ -37,4 +37,13 @@ class School
     @names.map(&:capitalize)
   end
 
+  def convert_end_time_to_clock_time
+    int_time = @start_time.to_i
+    int_end_time = int_time + @hours
+    if int_end_time > 13
+      new_time = int_end_time - 12
+      return new_time.to_s << ":00"
+    end
+
+  end
 end
